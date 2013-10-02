@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>OBFSC</title>
+		<script src="magic.js"></script>
+		<link rel="stylesheet" href="look.css">
+	</head>
+	<body>
+	<div class="content">
+		<p><h4>JavaScript обфускатор-исчезатор.</h4> Превращает код в последовательность битов. Затем заменяет 0,1 и пробел на введенные вами символы. <b>(Не используйте в качестве символов 0 и 1)</b></p>
+		<p>Для выполнения зашифрованного кода передайте шифр в качестве аргумента функции <i>magic</i>.</p>
+		<p>Если вы хотите выполнять функции после расшифровки, то объявляйте их анонимно. Например:
+		<pre class="cpp" style="font-family:monospace;">var Foo <span style="color: #000080;">=</span> function<span style="color: #008000;">&#40;</span>param<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#123;</span>code<span style="color: #008000;">&#125;</span></pre></p>
+		<p><small>Использует метод .forEach() для массива. Говорят, не везде работает.</small></p>
+		<div id="magicarea">
+			<div class="en" style="display: inline-block;">
+				<textarea id="in" cols="50" rows="10"></textarea><p>
+				<button type="button" class="btn btn-primary" id="encode" onclick="document.getElementById('out').value=(encode(document.getElementById('in').value));">Закодировать</button>
+			</div>
+			<div class="de" style="display: inline-block;">
+				<textarea id="out" cols="50" rows="10"></textarea><p>
+				<button type="button" class="btn btn-primary" id="decode" onclick="document.getElementById('in').value=(decode(document.getElementById('out').value));">Раскодировать</button>
+				<button type="button" class="btn btn-info" id="run" onclick="decFooOb(document.getElementById('out').value);">Выполнить</button>
+			</div>
+		</div>
+		<div style="display: inline-block; text-align: center;">
+			<input maxlength="1" value placeholder="Ноль" class="form-control" id="0" type="text" value=" ">
+			<input maxlength="1" value placeholder="Единица" class="form-control" id="1" type="text" value="	">
+			<input maxlength="1" value placeholder="Разделитель" class="form-control" id="sep" type="text" value="&#8195;">
+			<button type="button" class="btn btn-success" onclick="document.getElementById('0').value=' ';document.getElementById('1').value='	';document.getElementById('sep').value='&#8195;'">Заполнить пустыми</button>	
+		</div>
+		<div style="padding: 10px;">
+			Исполняющая функция:
+			<pre>function magic($){var _=["","\x66\x72\x6F\x6D\x43\x68\x61\x72\x43\x6F\x64\x65","\x66\x6F\x72\x45\x61\x63\x68","\x73\x70\x6C\x69\x63\x65","\x73\x70\x6C\x69\x74","\x67","\x31","\x72\x65\x70\x6C\x61\x63\x65","\x30"];$[_[(-~-~[]<<-~-~[])+~[]]](RegExp($[!![]+~[]],_[(!![]<<-~-~[])+!![]]),_[-~-~[]<<-~-~[]])[_[(-~-~[]<<-~-~[])+~[]]](RegExp($[-~[]],_[(!![]<<-~-~[])+!![]]),_[(-~-~[]<<-~-~[])+~-~[]])[_[-~-~[]<<(!![])]]($[-~-~[]])[_[(!![]<<-~-~[])+~[]]](-~[])[_[-~-~[]]](function (__){_[!![]+~[]]+=String[_[-~[]]](parseInt(__,-~-~[]));} );window[(!![]+[])[(!![]<<-~-~[])+~[]]+String[_[-~[]]](parseInt(''+-~[]+-~[]+-~[]+~~[]+-~[]+-~[]+~~[],-~-~[]))+(![]+[])[-~[]]+_[(!![]<<-~-~[])+~[]][-~-~[]]](_[!![]+~[]]);}</pre>
+		</div>
+	</div>
+	</body>
+</html>
